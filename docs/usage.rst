@@ -72,19 +72,19 @@ generate example snippets if the *:showexample:* option is included.
 **uri**, **url** links to the relevant IETF RFC that describes URL
    syntax.  Examples are generated using `faker.providers.internet`_.
 
-**boolean** links to the definition for the Python :class:`bool` type.
-   Examples are generated using `faker.providers.python`_.
+**boolean** links to the definitions of ``true`` and ``false`` in
+   :rfc:`8259#3`. Examples are generated using `faker.providers.python`_.
 
-**string**, **str** links to the definition for the Python :class:`str`
-   type.  Examples are generated using `faker.providers.python`_.
+**string**, **str** links to the specification of JSON strings in
+   :rfc:`8259#7`. Examples are generated using `faker.providers.python`_.
 
-**integer**, **int** links to the definition for the Python :class:`int`
-   type.  Examples are generated using `faker.providers.python`_.
+**integer**, **int** links to the specification of JSON numbers in
+   :rfc:`8259#6`. Examples are generated using `faker.providers.python`_.
 
-**float**, **number** links to the definition for the Python :class:`float`
-   type.  Examples are generated using `faker.providers.python`_.
+**float**, **number** links to the specification of JSON numbers in
+   :rfc:`8259#6`.  Examples are generated using `faker.providers.python`_.
 
-**null** links to the definition for the Python :data:`None` value.
+**null** links to the definitions of ``null`` in :rfc:`8259#3`.
 
 **email** links to :rfc:`2822` since it is the formal definition of an
    email address.  Examples are generated using `faker.providers.internet`_.
@@ -105,7 +105,7 @@ generate example snippets if the *:showexample:* option is included.
 **sha256** links to :rfc:`6234`.  Examples are generated using
    `faker.providers.misc`_.
 
-**user_name** links to the defintion for the Python :class:`str` type.
+**user_name** links to the defintion of a JSON string.
    Examples are generated using `faker.providers.internet`_.
 
 **[type]** by enclosing any type into [], it indicate a json array.
