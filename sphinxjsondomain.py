@@ -6,6 +6,7 @@ from docutils.parsers.rst import directives as rst_directives
 from sphinx import addnodes, directives, domains, roles
 from sphinx.util import docfields
 from sphinx.util import nodes as node_utils
+from sphinx.util import logging
 import faker
 
 try:
@@ -13,6 +14,7 @@ try:
 except ImportError:
     yaml = None
 
+logger = logging.getLogger(__name__)
 
 def is_json_array(typename):
     """ Check if a property type is an array.
@@ -249,11 +251,10 @@ class JSONObject(directives.ObjectDescription):
 
         props = self.domain_obj.get_object(name)
         if props:
-            env.warn(env.docname,
-                     'JSON type {} already documented in {}'.format(
+            logger.warn('JSON type {} already documented in {}'.format(
                          name,
                          env.doc2path(props.docname)),
-                     self.lineno)
+                         location=(env.docname, self.lineno))
         else:
             self.domain_obj.add_object(name, env, contentnode)
             if not noindex:
@@ -517,9 +518,8 @@ class JSONDomain(domains.Domain):
                                            version=(1, 2))
             else:
                 if language == 'yaml':
-                    self.env.warn(docname,
-                                  'YAML support is disabled, pip install yaml '
-                                  'to enable.')
+                    logger.warn('YAML support is disabled, pip install yaml '
+                                'to enable.')
                 title = 'JSON Example'
                 language = 'json'
                 code_text = json.dumps(sample_data, indent=4,
