@@ -21,8 +21,8 @@ def read_requirements(name):
 
 setuptools.setup(
     name='sphinx-jsondomain',
-    version='0.0.4',
-    url='https://github.com/dave-shawley/sphinx-jsondomain',
+    version='0.0.5',
+    url='https://github.com/jcarrano/sphinx-jsondomain',
     description='Describe JSON document structures in sphinx',
     long_description='\n'+open('README.rst').read(),
     license='BSD',
