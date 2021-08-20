@@ -4,6 +4,7 @@ import re
 from docutils import nodes
 from docutils.parsers.rst import directives as rst_directives
 from sphinx import addnodes, directives, domains, roles
+from sphinx.domains.python import PyTypedField
 from sphinx.util import docfields
 from sphinx.util import nodes as node_utils
 import faker
@@ -34,12 +35,12 @@ class JSONObject(directives.ObjectDescription):
 
     """
 
-    doc_field_types = [docfields.TypedField('property',
-                                            label='Object Properties',
-                                            names=('property', 'member'),
-                                            rolename='prop',
-                                            typerolename='jsonprop',
-                                            typenames=('proptype', 'type'))]
+    doc_field_types = [PyTypedField('property',
+                                    label='Object Properties',
+                                    names=('property', 'member'),
+                                    rolename='prop',
+                                    typerolename='jsonprop',
+                                    typenames=('proptype', 'type'))]
     """A list of fields that are implemented."""
 
     option_spec = {
