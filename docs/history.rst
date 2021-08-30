@@ -1,6 +1,11 @@
 Release History
 ===============
 
+`0.0.6`_ (30-Aug-2021)
+----------------------
+
+- Bugfix: empty strings can now be used as "propexample".
+
 `0.0.5`_ (12-Nov-2019)
 ----------------------
 - Support Sphinx >2
@@ -27,7 +32,8 @@ Release History
 - Initial implementation of ``:json:`` domain including support for
   ``:json:object::`` domain and ``:json:object:`` role.
 
-.. _Next Release: https://github.com/dave-shawley/sphinx-jsondomain/compare/0.0.3...HEAD
+.. _Next Release: https://github.com/dave-shawley/sphinx-jsondomain/compare/0.0.6...HEAD
+.. _0.0.6: https://github.com/jcarrano/sphinx-jsondomain/compare/0.0.5...0.0.6
 .. _0.0.5: https://github.com/jcarrano/sphinx-jsondomain/compare/0.0.4...0.0.5
 .. _0.0.4: https://github.com/boolangery/sphinx-jsondomain/compare/0.0.3...0.0.4
 .. _0.0.3: https://github.com/dave-shawley/sphinx-jsondomain/compare/0.0.2...0.0.3
