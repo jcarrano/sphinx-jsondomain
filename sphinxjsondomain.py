@@ -603,7 +603,11 @@ class PropertyDefinition(object):
                         name = tokens[1]
 
                         self.property_qualifiers[name] = self.property_qualifiers.get(name, PropertyQualifier())
-                        self.property_qualifiers[name].example_data = content[0][0].lstrip()
+                        try:
+                            raw_example = content[0][0]
+                        except IndexError:
+                            raw_example = ""
+                        self.property_qualifiers[name].example_data = raw_example.lstrip()
 
                     elif tokens[0] == 'options':
                         name = tokens[1]
@@ -648,7 +652,7 @@ class PropertyDefinition(object):
         for name, typ in self.property_types.items():
             # the data generator
             def gen_data():
-                if name in self.property_qualifiers and self.property_qualifiers[name].example_data:
+                if name in self.property_qualifiers and self.property_qualifiers[name].example_data is not None:
 
                     # try to cast data to user type
                     data = self.property_qualifiers[name].example_data
