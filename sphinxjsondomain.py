@@ -100,6 +100,7 @@ class JsonFieldTransformer(docfields.DocFieldTransformer):
                         nodes.Text(argtype),
                         self.directive.domain,
                         nodes.Text(argtype),
+                        env=self.directive.state.document.settings.env,
                     )
                     xrefs[0].attributes['json:name'] = strip_json_array(nodes.Text(argtype))
                     types.setdefault(typename, {})[argname] = xrefs
@@ -716,3 +717,7 @@ def normalize_object_name(obj_name):
 
 def setup(app):
     app.add_domain(JSONDomain)
+    return {
+        'parallel_read_safe': True,
+        'parallel_write_safe': True,
+    }
