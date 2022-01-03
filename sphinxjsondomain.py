@@ -100,6 +100,7 @@ class JsonFieldTransformer(docfields.DocFieldTransformer):
                         nodes.Text(argtype),
                         self.directive.domain,
                         nodes.Text(argtype),
+                        env=self.directive.state.document.settings.env,
                     )
                     xrefs[0].attributes['json:name'] = strip_json_array(nodes.Text(argtype))
                     types.setdefault(typename, {})[argname] = xrefs
