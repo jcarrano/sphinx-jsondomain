@@ -716,3 +716,7 @@ def normalize_object_name(obj_name):
 
 def setup(app):
     app.add_domain(JSONDomain)
+    return {
+        'parallel_read_safe': True,
+        'parallel_write_safe': True,
+    }
